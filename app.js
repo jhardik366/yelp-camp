@@ -21,7 +21,7 @@ var campgroundRoutes = require("./routes/campgrounds"),
 
 // mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 // mongoose.connect("mongodb://localhost:27017/Yelp_Camp_final", {useNewUrlParser: true});
-mongoose.connect("MONGODB_URL", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
