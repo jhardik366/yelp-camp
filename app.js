@@ -21,7 +21,7 @@ var campgroundRoutes = require("./routes/campgrounds"),
 
 // mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 // mongoose.connect("mongodb://localhost:27017/Yelp_Camp_final", {useNewUrlParser: true});
-mongoose.connect("mongodb://jain:root@yelp-camp-shard-00-00-suaml.mongodb.net:27017,yelp-camp-shard-00-01-suaml.mongodb.net:27017,yelp-camp-shard-00-02-suaml.mongodb.net:27017/test?ssl=true&replicaSet=yelp-camp-shard-0&authSource=admin&retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoose.connect("MONGODB_URL", {useNewUrlParser: true});
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
