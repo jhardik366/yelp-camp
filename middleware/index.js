@@ -15,7 +15,7 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next){
             //does user own the campground?
             // console.log(foundCampground.author.id); //It's a mongoose object
             // console.log(req.user._id);              //It's a string
-            if(foundCampground.author.id.equals(req.user._id)){
+            if(foundCampground.author.id.equals(req.user._id) || req.user.isAdmin){
                 next();
             }
             else{
@@ -43,7 +43,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next){
         }
         else {
             //does user own the comment?
-            if(foundComment.author.id.equals(req.user._id)){
+            if(foundComment.author.id.equals(req.user._id) || req.user.isAdmin){
                 next();
             }
             else {
