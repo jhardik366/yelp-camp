@@ -12,6 +12,7 @@ router.get("/new", middleware.isLoggedIn, function(req, res) {
             console.log(err);
         }
         else{
+            req.flash("success", "New Comment added");
             res.render("comments/new", {campground: campground});       //passing into the comments form
         }
     });
@@ -75,6 +76,7 @@ router.put("/:comment_id", middleware.checkCommentOwnership, function(req, res){
             res.redirect("back");
         } 
         else {
+            req.flash("success", "Comment updated");
             res.redirect("/campgrounds/" + req.params.id);
         }
     });  

@@ -1,6 +1,30 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/*.ui.form .field>label {*/
+/*    font-size: 2em;*/
+/*}*/
+
+
+/*.ui.form input{*/
+/*    width: auto;*/
+/*}*/
+.ui.menu{
+    margin-bottom: 30px;
+}
 .thumbnail img{
     width: 100%;
 }
+
+.ui.three.cards{
+    margin-left: 0;
+    margin-right: 0;
+}
+/*.ui.column{*/
+    /*width: 100%;*/
+/*    padding-left: 1.1em;*/
+/*}*/
 
 #show-page-img{
     padding: 0;
@@ -19,3 +43,7 @@
     height: 400px;
     width: 100%;
 }
+
+/*#owner_desc{*/
+/*    margin-top: 5em;*/
+/*}*/

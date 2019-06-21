@@ -1,36 +1,76 @@
 <% include partials/header %>
 
 <div class="row">
-    <h1 style="text-align: center">Sign Up</h1>
-    <div style="width: 30%; margin: 25px auto;">
-        <form action="/register" method="POST">
-            <div class="form-group">
-                <input class="form-control" type="text" name="username" placeholder="Username">
+    <!--<h2 style="text-align: center">SIGN UP</h2>-->
+    <div style="width: 70%; margin: 25px auto;">
+        <form class="ui huge form" action="/register" method="POST">
+            <div class="equal width fields">
+                <div class=" required four wide field">
+                    <label>USERNAME</label>
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+                <div class=" required four wide field">
+                    <label>PASSWORD</label>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
             </div>
-            <div class="form-group">
-                <input class="form-control" type="password" name="password" placeholder="password">
+            <div class="equal width fields">
+                <div class=" required eight wide field">
+                    <label>FIRST NAME</label>
+                    <input type="text" name="firstName" placeholder="First Name">
+                </div>
+                <div class=" required eight wide field">
+                    <label>LAST NAME</label>
+                    <input type="text" name="lastName" placeholder="Last Name">
+                </div>
             </div>
-            <div class="form-group">
-                <input required class="form-control" type="text" name="firstName" placeholder="First Name">
+            <div class=" required field">
+                    <label>EMAIL ID</label>
+                    <input type="email" name="email" placeholder="john@doe.com">
             </div>
-            <div class="form-group">
-                <input required class="form-control" type="text" name="lastName" placeholder="Last Name">
+            <div class="field">
+                    <label>AVATAR URL</label>
+                    <input type="text" name="avatar" placeholder="Avatar URL">
             </div>
-            <div class="form-group">
-                <input required class="form-control" type="email" name="email" placeholder="Email">
+            <div class="field">
+                    <label>DSECRIPTION</label>
+                    <textarea name="owner_description" placeholder="About you..."></textarea>
             </div>
-            <div class="form-group">
-                <input class="form-control" type="text" name="avatar" placeholder="Avatar URL">
+            <div class="field">
+                    <label>ADMIN CODE</label>
+                    <input type="text" name="adminCode" placeholder="Admin Code">
             </div>
-            <div class="form-group">
-                <input class="form-control" type="text" name="adminCode" placeholder="Admin Code">
-            </div>
-            <div class="form-group">
-                <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
-            </div>
+            <button class="fluid ui massive primary button">SIGN UP</button>
         </form>
         <a href="/campgrounds">Go Back</a>
     </div>
 </div>
 
+        <!--<form action="/register" method="POST">-->
+        <!--    <div class="form-group">-->
+        <!--        <input class="form-control" type="text" name="username" placeholder="Username">-->
+        <!--    </div>-->
+        <!--    <div class="form-group">-->
+        <!--        <input class="form-control" type="password" name="password" placeholder="password">-->
+        <!--    </div>-->
+        <!--    <div class="form-group">-->
+        <!--        <input required class="form-control" type="text" name="firstName" placeholder="First Name">-->
+        <!--    </div>-->
+        <!--    <div class="form-group">-->
+        <!--        <input required class="form-control" type="text" name="lastName" placeholder="Last Name">-->
+        <!--    </div>-->
+        <!--    <div class="form-group">-->
+        <!--        <input required class="form-control" type="email" name="email" placeholder="Email">-->
+        <!--    </div>-->
+        <!--    <div class="form-group">-->
+        <!--        <input class="form-control" type="text" name="avatar" placeholder="Avatar URL">-->
+        <!--    </div>-->
+        <!--    <div class="form-group">-->
+        <!--        <input class="form-control" type="text" name="adminCode" placeholder="Admin Code">-->
+        <!--    </div>-->
+        <!--    <div class="form-group">-->
+        <!--        <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>-->
+        <!--    </div>-->
+        <!--</form>-->
+        
 <% include partials/footer %>

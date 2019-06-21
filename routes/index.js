@@ -6,6 +6,7 @@ var Campground = require("../models/campground");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
+var middleware = require("../middleware");
 
 
 //root route
@@ -26,7 +27,8 @@ router.post("/register", function(req, res) {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
-        avatar: req.body.avatar
+        avatar: req.body.avatar,
+        owner_description: req.body.owner_description
       });
     
     if(req.body.adminCode === 'secretcode123') {
@@ -55,7 +57,7 @@ router.post("/login", passport.authenticate("local",           //app.post("/logi
     {successRedirect: "/campgrounds",
     failureRedirect: "/login",
     failureFlash: true,
-    successFlash: 'Welcome to YelpCamp!' 
+    successFlash: "Welcome to YelpCamp!" 
     }), function(req, res){
 });
 
@@ -198,6 +200,29 @@ router.get("/users/:id", function(req, res) {
       res.render("users/show", {user: foundUser, campgrounds: campgrounds});
     })
   });
+});
+
+router.get("/users/:id/edit", function(req, res) {
+    User.findById(req.params.id, function(err, foundUser){
+        if(err){
+            res.redirect("back");
+        }
+        res.render("users/edit", {user: foundUser});
+    });
+});
+
+router.put("/users/:id", function(req, res){
+    // res.redirect("/users/" + req.params.id);
+    User.findByIdAndUpdate(req.params.id, req.body.user, function(err, updatedUser){
+        if(err){
+            req.flash("err", err.message);
+            res.redirect("users/show");
+        } 
+        else {
+            req.flash("success", "Info Updated");
+            res.redirect("/users/" + req.params.id);
+        }
+    });  
 });
 
 module.exports = router;

@@ -5,19 +5,43 @@
         <div class="container">
             <h1><span class="glyphicon glyphicon-tent"></span> Welcome to YelpCamp</h1>
             <p>View our hand-picked campgrounds from all over the world</p>
-            <p>
-                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add new campground</a>    
-            </p>
+            <a class="blue ui right labeled icon massive button" href="/campgrounds/new">
+                <i class="plus icon"></i>
+                Add New Campground
+            </a>
             <p>
             	<form action="/campgrounds" method="GET" class="form-inline">
-            		<div class="form-group">
-            			<input type="text" name="search" placeholder="Campground search..." class="form-control">
-            			<input type="submit" value="Search" class="btn btn-default">
+            		<div class="ui search">
+            		    <div class="ui icon input">
+            			    <input type="text" name="search" placeholder="Campground search..." class="prompt">
+            			    <i class="search icon"></i>
+            			</div>
+            			<!--<input type="submit" value="Search" class="btn btn-default">-->
+            			<div class="results"></div>
             		</div>
             	</form>
             </p>
         </div>
     </header>
+    
+    <!--<div class="ui sizer center aligned placeholder segment">-->
+    <!--    <h1 class="ui icon header">-->
+    <!--        <i class="tree icon"></i>-->
+    <!--        <div class="content">Yelp Camp-->
+    <!--            <div class="sub header">View our hand-picked campgrounds from all over the world</div>-->
+    <!--        </div>-->
+    <!--    </h1>-->
+    <!--    <form action="/campgrounds" method="GET" class="form-inline">-->
+    <!--        	<div class="ui search">-->
+    <!--        	    <div class="ui icon input">-->
+    <!--        		    <input type="text" name="search" placeholder="Campground search..." class="prompt">-->
+    <!--        		    <i class="search icon"></i>-->
+    <!--        		</div>-->
+            		<!--<input type="submit" value="Search" class="btn btn-default">-->
+    <!--        		<div class="results"></div>-->
+    <!--        	</div>-->
+    <!--    </form>-->
+    <!--</div>-->
     
     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
         <div class="col-md-12">
@@ -25,21 +49,39 @@
              <h3><%= noMatch %></h3>
              <% } %>
          </div>
-        <% campgrounds.forEach(function(campground){ %>
-        <div class="col-md-3 col-sm-6">
-            <div class="thumbnail">
-                <img src="<%= campground.image %>">
-                <div class="caption">
-                    <h4><%= campground.name %></h4>    
-                </div>
-                <p>
-                    <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
-                </p>
+        <!--<div class="col-md-12">-->
+        <div class="ui three doubling stackable cards">
+            <% campgrounds.forEach(function(campground){ %>
+            <div class="card">
+                <!--<div class="ui fluid card">-->
+                    <div class="image">
+                        <img src="<%= campground.image %>">
+                    </div>
+                    <div class="content">
+                        <div class="centered aligned header"><%= campground.name %></div>
+                    <!--</div>-->
+                    </div>
+                    <a class="ui bottom attached huge button"  href="/campgrounds/<%= campground._id %>">
+                        <i class="add icon"></i>
+                        More Info
+                    </a>
             </div>
+            <% });%>  
         </div>
-        <% });%>    
+        <!--</div>-->
+          
     </div>
-    
-</div>
 
 <% include ../partials/footer %>
+
+<!--<div class="col-md-3 col-sm-6">-->
+<!--            <div class="thumbnail">-->
+<!--                <img src="">-->
+<!--                <div class="caption">-->
+<!--                    <h4></h4>    -->
+<!--                </div>-->
+<!--                <p>-->
+<!--                    <a href="/campgrounds/" class="btn btn-primary">More Info</a>-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
