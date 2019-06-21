@@ -19,8 +19,8 @@ var campgroundRoutes = require("./routes/campgrounds"),
     commentRoutes    = require("./routes/comments"),
     indexRoutes      = require("./routes/index");
 
-// mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
-mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
+// mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
